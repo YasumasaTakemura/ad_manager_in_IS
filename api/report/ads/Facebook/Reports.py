@@ -22,6 +22,7 @@ from utils.funcs import (remove_specified_key,
                               )
 from db.ads.ads import find_account_id, find_product_id, find_media_id
 from report.ads.Manager.manager import AdAPItManager
+from report.ads.Manager.ads_db_manager import Manager
 
 
 class Reports(AdAPItManager):
@@ -53,7 +54,13 @@ class Reports(AdAPItManager):
 
         # init account
         # proxies = {'http': '<HTTP_PROXY>', 'https': '<HTTPS_PROXY>'} # add proxies if needed
-        api = FacebookAdsApi.init(access_token=config['access_token'])
+
+        keys = Manager.get_password_and_tokens('facebook')
+        print('>>>>>>FACEBOOK>>>>>')
+        print(keys)
+        print(keys[0][1])
+        # api = FacebookAdsApi.init(access_token=config['access_token'])
+        api = FacebookAdsApi.init(access_token=keys[0][1])
 
         account = AdAccount(self._media_account_id)
         campaign = Campaign(self._campaign_id)

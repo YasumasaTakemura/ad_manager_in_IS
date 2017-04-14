@@ -1,15 +1,8 @@
 from utils.funcs import validate_login, get_addon_by_groups, reshape_orm_result, today, yesterday
 from db.ads import ads
 from flask_cors import CORS, cross_origin
-from flask import redirect, request, render_template, url_for, jsonify, Blueprint
+from flask import request, jsonify, Blueprint
 from report.ads.Dashboard.dashboard import Dashboard
-from report.ads.Dashboard.get import Manager as DBManager
-from report.ads.Dashboard.resister import Resister
-from report.ads.Dashboard.updater import Updater
-from report.ads.Manager.manager import Get
-
-import json
-from datetime import datetime, timedelta
 from report.ads.Facebook.Reports import CampaignReport as FBCampaignReport
 from report.ads.Manager.worker import fb_campagin_report_worker, im_campagin_report_worker, \
     tw_campagin_report_worker, nend_campagin_report_worker

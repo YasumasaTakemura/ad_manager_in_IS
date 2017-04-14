@@ -3,7 +3,6 @@ import time as timer
 from threading import Thread
 from utils.funcs import today, yesterday
 from twitter_ads.campaign import LineItem
-
 from db.ads import ads
 
 

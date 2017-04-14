@@ -2,20 +2,23 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy import func, asc, case
 from sqlalchemy.sql import label
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
-from report.scraper.scraper.Scraper import Scraper
 from db.ads.ads import  Products, AdMedia, AdAccount, AdReportManager, AdjustEvents, CampaignReport, \
-    DailyBudget,MonthlyBudget, AdFee, Promotion,Device
+    DailyBudget,MonthlyBudget, AdFee, Promotion,Device,PasswordAndToken
 from db.ads import ads
-from db.ads.ads import find_account_name, find_account_id, find_media_id, find_media_name, find_product_id, \
-    find_product_name
 from utils.funcs import parseSAtoJson, json_to_csv, end_of_month, begging_of_month, today,remove_specified_key
 from datetime import datetime
-from dateutil.relativedelta import relativedelta
-from report.ads.Manager.manager import AdAPItManager
 
 
 class Manager:
+    @classmethod
+    def get_password_and_tokens(cls,media_name):
+        session = ads.session
 
+        keys = session.query(PasswordAndToken.type,PasswordAndToken.value).filter(
+            PasswordAndToken.media_name == media_name,
+        ).all()
+
+        return keys
 
 
 
