@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask import Flask,jsonify
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.cors import CORS
+from flask import Flask
+# from flask.ext.cors import CORS
 import os
 from controllers import register, tasks, fileTransfer, selenium, requests, forms, addons, \
     groupManager, userManager, generals, loginManager, ads
@@ -35,14 +34,15 @@ for module in modules:
 ###########################
 # CORS
 ###########################
-CORS(app, resources={r"/*": {"origins": "*"}})
-
-with app.test_request_context():
-    input = ['account', 'service', 'user_id', 'todo_id', 'todo_name', 'account', 'service', 'finished', 'deadline',
-             'problems', 'status_now', 'status_future', 'actions']
-
-
+# CORS(app, resources={r"/*": {"origins": "*"}})
+#
+# with app.test_request_context():
+#     input = ['account', 'service', 'user_id', 'todo_id', 'todo_name', 'account', 'service', 'finished', 'deadline',
+#              'problems', 'status_now', 'status_future', 'actions']
+#
+#
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080, debug=True,processes=3)
+    app.run()
+    # app.run(host='0.0.0.0', port=8080, debug=True,processes=3)
