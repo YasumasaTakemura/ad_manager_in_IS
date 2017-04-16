@@ -24,7 +24,7 @@ class Scraper:
     # ChromeDriver config
     ###########################
     chromeOptions = webdriver.ChromeOptions()
-    prefs = {'download.default_directory': '/Users/YasumasaTakemura/Desktop/'}
+    prefs = {'download.default_directory': '/app'}
     chromeOptions.add_experimental_option("prefs", prefs)
     chromeOptions.add_argument(
         '--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.52 Safari/537.36')

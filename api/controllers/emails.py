@@ -7,7 +7,7 @@ from app import app as flask_app
 from flask_cors import CORS, cross_origin
 from flask import redirect, request, jsonify
 from flask import Blueprint
-from flask_mail import Message, Mail
+# from flask_mail import Message, Mail
 from sqlalchemy import delete, asc, desc, or_
 from sqlalchemy.exc import IntegrityError, InvalidRequestError, SQLAlchemyError
 import json

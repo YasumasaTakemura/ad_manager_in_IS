@@ -4,8 +4,7 @@
 from flask import Flask
 # from flask.ext.cors import CORS
 import os
-from controllers import register, tasks, fileTransfer, selenium, requests, forms, addons, \
-    groupManager, userManager, generals, loginManager, ads
+from controllers import ads
 
 
 # JWT secret key
@@ -25,8 +24,7 @@ app.config['JSON_AS_ASCII'] = False
 ###########################
 # register Blueprint
 # set filename of controller file and register into blueprint
-modules = [register.app, tasks.app, fileTransfer.app, selenium.app, requests.app, forms.app, addons.app,
-           groupManager.app, userManager.app, userManager.app, generals.app, loginManager.app, ads.app]
+modules = [ads.app]
 
 for module in modules:
     app.register_blueprint(module)
