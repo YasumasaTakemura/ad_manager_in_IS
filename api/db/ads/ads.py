@@ -17,8 +17,9 @@ from utils.funcs import today, begging_of_month
 # logging.basicConfig(level=logging.DEBUG)
 # logging.getLogger('sqlalchemy.engine.base').setLevel(logging.DEBUG)
 
-SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+
 try:
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
     print('>>>>>>>>>>>>>>SQLALCHEMY_DATABASE_URI')
     print(SQLALCHEMY_DATABASE_URI)
 except:
