@@ -10,10 +10,6 @@ from controllers import ads
 # JWT secret key
 secretKey = 'secretKey'
 
-"""
-if not os.environ.get('DATABASE_URL'):
-    os.environ['DATABASE_URL'] = 'postgres://YasumasaTakemura@localhost:5432/postgres'
-"""
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "ITSASECRET"
